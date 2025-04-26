@@ -1,0 +1,51 @@
+p {
+    font-size: 30px;
+    font-family: arial;
+    font-weight: bold;
+    width: 500px;
+    margin-bottom: 0;
+    padding-left: 5px;
+}
+.pr2 {
+    font-size: 15px;
+    font-family: arial;
+    color: rgb(96, 96, 96);
+    font-weight: 10px;
+    margin-top: 8px;
+    margin-bottom: 40px;
+    padding-left: 5px;
+}
+.pr3 {
+    font-family: arial;
+    color: rgb(22, 12, 12);
+    font-size: 20px;
+    padding-left: 5px;
+}
+.pr4 {
+    font-size: large;
+    font-family: arial;
+    color: rgb(22, 12, 12);
+    font-size: 20px;
+    line-height: 20px;
+    padding-left: 5px;
+    text-align: 10px;
+    width: 500px;
+}
+.pr5 {
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 70px;
+    text-decoration: underline;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.pr12 {
+    color: red;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.pr12:hover {
+    text-decoration: underline;
+}

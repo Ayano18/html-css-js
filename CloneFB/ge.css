@@ -1,0 +1,94 @@
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 700px;
+}
+.aa{
+    display: block;
+}
+.aaa{
+    background-color: whitesmoke;
+    padding: 15px;
+    border-radius: 10px;
+}
+.login{
+
+}
+.main2{
+    
+}
+.bb{
+    background-color: lightblue;
+}
+.user{
+    display: block;
+    width: 350px;
+    height: 50px;
+    text-align: center;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: darkgray;
+    font-size: medium;
+    margin: 9px;
+}
+.pass{
+    display: block;
+    width: 350px;
+    height: 50px;
+    text-align: center;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: darkgray;
+    font-size: medium;
+    margin: 9px;
+}
+.btn{
+    background-color: skyblue;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    width: 356px;
+    height: 50px;
+    border-style: none;
+    border-radius: 5px;
+    margin: 9px;
+}
+.btn:hover{
+    background-color: black;
+}
+.forgot{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.forgot:hover{
+    text-decoration: underline;
+}
+.create{
+    cursor: pointer;
+    background-color: #1fd655;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 7px;
+    border-style: none;
+    margin-left: 90px;
+}
+.create:hover{
+    background-color: #00ab41;
+}
+.fb{
+    margin: 0;
+    font-size: 80px;
+    font-weight: 600;
+    color: blue;
+}
+.connected{
+    margin: 0;
+    font-size: 30px;
+    width: 430px;
+}

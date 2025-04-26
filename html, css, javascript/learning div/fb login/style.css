@@ -1,0 +1,75 @@
+.container-one {
+    display: block;
+}
+.par-one {
+    font-family: Arial;
+    text-align: center;
+}
+.container-two {
+    display: block;
+}
+.par-two {
+    font-family: Arial;
+    font-weight: 700;
+    color: #3b5998;
+    text-align: center;
+    font-size: 25px;
+}
+.container-three {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+.input-one {
+    text-align: justify;
+    padding: 10px;
+}
+.input-two {
+    text-align: justify;
+    padding: 10px;
+}
+.btn-one {
+    padding: 5px;
+    background-color: #3b5998;
+    color: white;
+    font-weight: 600;
+}
+.par-three {
+    text-align: center;
+    font-size: 14px;
+    font-family: arial;
+    color: #3b5998;
+}
+.par-four {
+    text-align: center;
+    margin-top: 0px;
+}
+.container-five {
+    display: block;
+    text-align: center;
+}
+.par-five {
+    height: 35px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+.container-six {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+.contain6 {
+    margin-right: 100px;
+}
+.contain66 {
+    margin-left: 100px;
+}
+.container-seven {
+    display: grid;
+    grid-template-columns: 70px 70px 70px;
+    justify-content: center;
+}

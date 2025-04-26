@@ -1,0 +1,65 @@
+.name {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.email {
+    display: block;
+}
+p {
+    display: inline-block;
+    width: 300px;
+    vertical-align: middle;
+}
+.uno {
+    width: 75px;
+}
+.dos {
+    display: inline-block;
+    width: 76px;
+}
+.tres {
+    display: block;
+    margin-top: 3px;
+    margin-bottom: 5px;
+}
+.kwatro {
+    background-color: royalblue;
+    color: white;
+    width: 170px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+}
+.ride {
+    font-weight: bold;
+    font-family: arial;
+    margin-top: 50px;
+    display: block;
+}
+.locate {
+    width: 275px;
+    height: 30px;
+    font-weight: 600;
+}
+.destinate {
+    width: 275px;
+    height: 30px;
+    font-weight: 600;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.now {
+    background-color: black;
+    color: white;
+    width: 120px;
+    height: 35px;
+}
+.later {
+    background-color: gainsboro;
+    color: black;
+    height: 35px;
+}

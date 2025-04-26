@@ -1,0 +1,151 @@
+.main {
+    background-color: #add8e6;
+    max-width: 450px;
+    border-style: solid;
+    border-width: 1px;
+}
+.container-one {
+    background-color: white;
+    padding-left: 20px;
+    max-width: 35%;
+    border-style: solid;
+    border-width: 1px;
+}
+.container-inside {
+    display: inline-block;
+    margin-left: 20px;
+}
+.image {
+    width: 80px;
+    border-radius: 50px;
+}
+.inbox {
+    margin-bottom: 0;
+    display: block;
+    font-family: arial;
+    color: grey;
+}
+.par-one {
+    font-family: arial;
+    font-weight: 700;
+    width: 150px;
+}
+.par-two {
+    display: inline-block;
+    vertical-align: top;
+    font-family: arial;
+    font-size: 14px;
+}
+.par-three {
+    font-family: arial;
+    font-weight: 700;
+}
+.par-four {
+    font-family: arial;
+    color: grey;
+}
+.container-two {
+    padding-left: 10px;
+}
+.inbox-one {
+    display: block;
+}
+.contain-one {
+    background-color: lightpink;
+    display: inline-block;
+}
+.img-one {
+    border-radius: 50px;
+}
+.p-one {
+    font-family: Arial;
+    display: inline-block;
+    font-size: 14px;
+    padding-left: 90px;
+    color: grey;
+}
+.p-two {
+    display: inline-block;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+}
+.p-three {
+    display: block;
+    margin-top: 0;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+}
+.p-four {
+    display: block;
+    color: grey;
+}
+.container-three {
+    padding-left: 10px;
+}
+.contain-two {
+    background-color: lightpink;
+    display: inline-block;
+}
+.img-two {
+    border-radius: 50px;
+}
+.pp-one {
+    font-family: Arial;
+    display: inline-block;
+    font-size: 14px;
+    padding-left: 150px;
+    color: grey;
+}
+.pp-two {
+    display: inline-block;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+}
+.pp-three {
+    display: block;
+    margin-top: 0;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+}
+.pp-four {
+    display: block;
+    color: grey;
+}
+.container-four {
+    padding-left: 10px;
+}
+.contain-three {
+    background-color: lightpink;
+    display: inline-block;
+}
+.img-three {
+    border-radius: 50px;
+}
+.ppp-one {
+    font-family: Arial;
+    display: inline-block;
+    font-size: 14px;
+    padding-left: 175px;
+    color: grey;
+}
+.ppp-two {
+    display: inline-block;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+}
+.ppp-three {
+    display: block;
+    margin-top: 0;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+}
+.ppp-four {
+    display: block;
+    color: grey;
+}

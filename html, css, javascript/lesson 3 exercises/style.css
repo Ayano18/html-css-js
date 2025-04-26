@@ -1,0 +1,105 @@
+.first {
+    background-color: black;
+    color: white;
+    padding: 12px;
+    margin-left: 10px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.first:hover {
+    background-color: gray;
+    color: white;
+    transition: 0.3s;
+}
+.second {
+    background-color: limegreen;
+    color: white;
+    font-weight: 600;
+    padding: 13px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 7px;
+    border: none;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.third {
+    background-color: blueviolet;
+    color: white;
+    font-weight: 600;
+    width: 100px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.fourth {
+    background-color: white;
+    color: gray;
+    border-color: gray;
+    font-weight: 600;
+    width: 100px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    border-width: 1px;
+    border-radius: 5px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.fourth:hover {
+    background-color: darkslategray;
+    color: white;
+}
+.fifth {
+    background-color: navy;
+    color: white;
+    font-weight: 700;
+    width: 190px;
+    height: 45px;
+    padding-left: 9px;
+    padding-right: 9px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.p1 {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: large;
+    margin-top: 50px;
+}
+.p1:hover {
+    color: gold;
+}
+.p2 {
+    font-family: bold;
+    font-weight: bold;
+    font-size: 40px;
+}
+.p3 {
+    color: limegreen;
+    font-family: bold;
+    font-weight: bold;
+    font-size: 20px;
+}
+.sixth {
+    background-color: yellow;
+    color: black;
+    width: 110px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+.seventh {
+    background-color: orange;
+    color: black;
+    width: 110px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 20px;
+}

@@ -1,0 +1,113 @@
+.first {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    margin-bottom: 20px;
+}
+.first-one,
+.first-three {
+    background-color: lightpink;
+}
+.first-two,
+.first-four {
+    background-color: lightblue;
+}
+.second {
+    display: flex;
+    flex-direction: column-reverse;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    margin-bottom: 20px;
+}
+.second-one,
+.second-three {
+    background-color: lightpink;
+}
+.second-two,
+.second-four {
+    background-color: lightblue;
+}
+.third {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    margin-bottom: 20px;
+}
+.third-one,
+.third-three {
+    background-color: lightpink;
+}
+.third-two,
+.third-four {
+    background-color: lightblue;
+}
+.fourth {
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    margin-bottom: 100px;
+}
+.fourth-one,
+.fourth-three {
+    background-color: lightpink;
+}
+.fourth-two,
+.fourth-four {
+    background-color: lightblue;
+}
+.notify {
+    display: flex;
+    flex-direction: row;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    max-width: 300px;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+}
+.color1,
+.color2,
+.color3 {
+    background-color: #1da1f2;
+    color: white;
+    border-radius: 10px;
+    width: 25px;
+    text-align: center;
+}
+.design {
+    display: flex;
+    flex-direction: row;
+    background-color: blueviolet;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.design1 {
+    color: white;
+    margin-left: 15px;
+}
+.design2 {
+    border-radius: 50px;
+    border: none;
+    height: 35px;
+    width: 40%;
+    padding-left: 15px;
+}
+.design3 {
+    color: white;
+    padding: 0.5%;
+    border-style: solid;
+    border-width: 2px;
+    margin-right: 15px;
+}

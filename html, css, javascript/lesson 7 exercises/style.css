@@ -1,0 +1,22 @@
+.div-one {
+    display: flex;
+    background-color: lightpink;
+    justify-content: center;
+    
+}
+.search {
+    border-radius: 20px;
+    border-width: 1px;
+    font-style: arial;
+    width: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.div-two {
+    display: block;
+}
+.nothing {
+    width: 300px;
+    height: 30px;
+}

@@ -1,0 +1,78 @@
+.pfp1 {
+    width: 100px;
+    border-radius: 40px;
+    display: inline-block;
+}
+.pfp2 {
+    width: 100px;
+    border-radius: 40px;
+    display: inline-block;
+}
+.one,
+.onee {
+    display: inline-block;
+}
+.onee {
+    margin-right: 100px;
+}
+.oneee {
+    display: inline-block;
+    vertical-align: 40px;
+}
+.pr1 {
+    margin-bottom: 10px;
+}
+.pr11 {
+    margin: 0px;
+}
+.pr111 {
+    margin-top: 10px;
+}
+.two,
+.twoo {
+    display: inline-block;
+}
+.twoo {
+    margin-right: 100px;
+}
+.twooo {
+    display: inline-block;
+    vertical-align: 35px;
+}
+.pr22 {
+    margin: 0px;
+}
+.btn1 {
+    background-color: skyblue;
+    color: white;
+    border: none;
+    height: 25px;
+}
+.btn2 {
+    background-color: skyblue;
+    color: white;
+    border: none;
+    height: 25px;
+}
+.request {
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 200px;
+}
+.ninja {
+    width: 40px;
+    border-radius: 30px;
+}
+.mrbeast {
+    object-fit: contain;
+    width: 200px;
+    display: block;
+}
+.name {
+    margin: 0px;
+}
+.mutual {
+    display: inline-block;
+    margin: 0px;
+    vertical-align: 13px;
+}
