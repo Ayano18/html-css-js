@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Scramble Game</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .game-container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+        }
+
+        .scramble-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            gap: 10px;
+        }
+
+        .scramble-letter {
+            background-color: #3498db;
+            color: white;
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+        }
+
+        .scramble-letter:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .scramble-letter.selected {
+            background-color: #e74c3c;
+            transform: scale(1.1);
+        }
+
+        .input-container {
+            margin: 20px 0;
+        }
+
+        input[type="text"] {
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 400px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #2980b9;
+        }
+
+        button {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: all 0.3s;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(46, 204, 113, 0.3);
+        }
+
+        button:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(46, 204, 113, 0.4);
+        }
+
+        #hint-btn {
+            background-color: #f39c12;
+            box-shadow: 0 4px 8px rgba(243, 156, 18, 0.3);
+        }
+
+        #hint-btn:hover {
+            background-color: #e67e22;
+            box-shadow: 0 6px 12px rgba(243, 156, 18, 0.4);
+        }
+
+        .hint-text {
+            margin-top: 15px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .attempts-counter {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .congrats-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            flex-direction: column;
+        }
+
+        .video-container {
+            width: 80%;
+            max-width: 800px;
+            position: relative;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .message {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Word Scramble Challenge</h1>
+        <p>Unscramble the letters to form the correct word!</p>
+        
+        <div class="scramble-container" id="scramble-letters">
+            <!-- Letters will be inserted here by JavaScript -->
+        </div>
+        
+        <div class="input-container">
+            <input type="text" id="player-guess" placeholder="Your answer...">
+            <p id="feedback" style="color: #e74c3c; height: 20px;"></p>
+        </div>
+        
+        <div>
+            <button id="check-btn">Check Answer</button>
+            <button id="hint-btn">Hint</button>
+            <button id="reset-btn">Reset Letters</button>
+        </div>
+        
+        <p class="hint-text" id="hint-text"></p>
+        <p class="attempts-counter">Attempts left: <span id="attempts">3</span></p>
+    </div>
+    
+    <div class="congrats-video" id="congrats-video">
+        <div class="message">Congratulations! You guessed it right!</div>
+        <div class="video-container">
+            <button class="close-btn" id="close-video">X</button>
+            <video id="victory-video" controls autoplay>
+                <source src="song1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    
+    <script>
+        // Game configuration
+        const gameWords = [
+            { word: "balikan", hint: "Imahe by Magnus Haven" }
+        ];
+        
+        // Game state
+        let currentWord;
+        let scrambledLetters = [];
+        let selectedLetters = [];
+        let attemptsLeft = 3;
+        
+        // DOM elements
+        const scrambleLettersContainer = document.getElementById('scramble-letters');
+        const playerGuessInput = document.getElementById('player-guess');
+        const checkBtn = document.getElementById('check-btn');
+        const hintBtn = document.getElementById('hint-btn');
+        const resetBtn = document.getElementById('reset-btn');
+        const hintText = document.getElementById('hint-text');
+        const attemptsDisplay = document.getElementById('attempts');
+        const feedbackDisplay = document.getElementById('feedback');
+        const congratsVideo = document.getElementById('congrats-video');
+        const victoryVideo = document.getElementById('victory-video');
+        const closeVideoBtn = document.getElementById('close-video');
+        
+        // Initialize the game
+        function initGame() {
+            // Reset game state
+            selectedLetters = [];
+            attemptsLeft = 3;
+            
+            // Select a random word
+            currentWord = gameWords[Math.floor(Math.random() * gameWords.length)];
+            
+            // Scramble the letters
+            scrambledLetters = scrambleWord(currentWord.word);
+            
+            // Update UI
+            updateScrambleLetters();
+            updateAttemptsDisplay();
+            playerGuessInput.value = '';
+            feedbackDisplay.textContent = '';
+            hintText.textContent = '';
+        }
+        
+        // Scramble the letters of a word
+        function scrambleWord(word) {
+            const letters = word.split('');
+            
+            // Fisher-Yates shuffle algorithm
+            for (let i = letters.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [letters[i], letters[j]] = [letters[j], letters[i]];
+            }
+            
+            return letters;
+        }
+        
+        // Update the scramble letters display
+        function updateScrambleLetters() {
+            scrambleLettersContainer.innerHTML = '';
+            
+            scrambledLetters.forEach((letter, index) => {
+                const letterElement = document.createElement('div');
+                letterElement.className = 'scramble-letter';
+                letterElement.textContent = letter.toUpperCase();
+                
+                if (selectedLetters.includes(index)) {
+                    letterElement.classList.add('selected');
+                }
+                
+                letterElement.addEventListener('click', () => selectLetter(index));
+                
+                scrambleLettersContainer.appendChild(letterElement);
+            });
+        }
+        
+        // Handle letter selection
+        function selectLetter(index) {
+            if (selectedLetters.includes(index)) {
+                // Deselect if already selected
+                selectedLetters = selectedLetters.filter(i => i !== index);
+            } else {
+                // Select if not already selected
+                selectedLetters.push(index);
+            }
+            
+            updateScrambleLetters();
+            updatePlayerGuess();
+        }
+        
+        // Update player guess input based on selected letters
+        function updatePlayerGuess() {
+            playerGuessInput.value = selectedLetters
+                .map(index => scrambledLetters[index])
+                .join('')
+                .toLowerCase();
+        }
+        
+        // Update attempts display
+        function updateAttemptsDisplay() {
+            attemptsDisplay.textContent = attemptsLeft;
+        }
+        
+        // Check player's answer
+        function checkAnswer() {
+            const playerGuess = playerGuessInput.value.trim().toLowerCase();
+            
+            if (!playerGuess) {
+                feedbackDisplay.textContent = 'Please select letters first!';
+                return;
+            }
+            
+            if (playerGuess === currentWord.word.toLowerCase()) {
+                // Correct answer
+                showVictory();
+            } else {
+                // Wrong answer
+                attemptsLeft--;
+                
+                if (attemptsLeft <= 0) {
+                    feedbackDisplay.textContent = `Game over! The word was "${currentWord.word}". Try again!`;
+                    checkBtn.disabled = true;
+                } else {
+                    feedbackDisplay.textContent = 'Wrong answer! Try again.';
+                }
+                
+                updateAttemptsDisplay();
+            }
+        }
+        
+        // Show victory video
+        function showVictory() {
+            congratsVideo.style.display = 'flex';
+            victoryVideo.play();
+        }
+        
+        // Close video
+        function closeVideo() {
+            congratsVideo.style.display = 'none';
+            victoryVideo.pause();
+            victoryVideo.currentTime = 0;
+            initGame(); // Start a new game
+        }
+        
+        // Event listeners
+        checkBtn.addEventListener('click', checkAnswer);
+        
+        hintBtn.addEventListener('click', () => {
+            hintText.textContent = `Hint: ${currentWord.hint}`;
+        });
+        
+        resetBtn.addEventListener('click', () => {
+            selectedLetters = [];
+            updateScrambleLetters();
+            playerGuessInput.value = '';
+        });
+        
+        closeVideoBtn.addEventListener('click', closeVideo);
+        
+        playerGuessInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                checkAnswer();
+            }
+        });
+        
+        // Initialize the first game
+        initGame();
+    </script>
+</body>
+</html>

@@ -1,67 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Website</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Lifestyle Blog</title>
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #f8f8f7;
+      color: #4a5a45;
+      line-height: 1.6;
+    }
+    a {
+      color: #4a5a45;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    /* Header / Navigation */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-family: 'Dancing Script', cursive;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.6rem;
+      color: #6a7a68;
+      user-select: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      font-size: 1rem;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      border-bottom: 2px solid #8a9a86;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #e6e8e4;
+      padding: 60px 40px;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+    .hero-img {
+      flex: 1 1 300px;
+      max-width: 360px;
+      min-width: 260px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 10px 24px rgb(0 0 0 / 0.07);
+      object-fit: contain;
+      background-color: white;
+    }
+    .hero-text {
+      flex: 1 1 300px;
+      max-width: 360px;
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: #607257;
+      line-height: 1.2;
+      user-select: none;
+      font-family: 'Georgia', serif;
+      white-space: pre-line;
+    }
+
+    /* Content Section */
+    main {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      color: #565e52;
+    }
+    .text-area {
+      flex: 1 1 48%;
+      min-width: 280px;
+    }
+    .text-area h2 {
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #5b6d58;
+      user-select: none;
+      font-family: 'Georgia', serif;
+    }
+    .text-area p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-top: 0;
+      color: #677863;
+    }
+    .image-area {
+      flex: 1 1 40%;
+      min-width: 280px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgb(0 0 0 / 0.06);
+    }
+    .image-area img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      background-color: #f0f1ed;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+      }
+      .hero-text {
+        font-size: 2rem;
+        text-align: center;
+      }
+      main {
+        flex-direction: column;
+      }
+      .text-area, .image-area {
+        flex: 1 1 100%;
+        min-width: 100%;
+      }
+    }
+  </style>
+  <!-- Google Fonts for the script-style logo -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>My Professional Website</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <div class="logo" aria-label="Lifeh lifestyle blog logo">lifeh</div>
+    <nav role="navigation" aria-label="Primary navigation">
+      <a href="#home" tabindex="0">Home</a>
+      <a href="#categories" tabindex="0">Categories</a>
+      <a href="#gallery" tabindex="0">Gallery</a>
+      <a href="#about" tabindex="0">About me</a>
+      <a href="#cooperation" tabindex="0">Cooperation</a>
+    </nav>
+  </header>
+  <section class="hero" aria-label="Main introduction to lifestyle blog">
+    <div class="hero-img" role="img" aria-label="Minimalistic clear glass vase with green leafy stems standing on white surface">
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1a209021-e480-4bee-82f5-155e5616345f.png" alt="Minimalistic clear glass vase with two green leafy stems in water on white background" onerror="this.onerror=null; this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3024ddbc-e701-4f71-b424-afc9e9e78c00.png';" />
+    </div>
+    <div class="hero-text" aria-level="1" role="heading" tabindex="0">
+      My<br />lifestyle<br />blog
+    </div>
+  </section>
+  <main>
+    <article class="text-area" id="home" tabindex="0">
+      <h2>What is this blog about?</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquam dui ac nunc suscipit, sed semper urna cursus. 
+        Vivamus rhoncus, justo nec commodo dignissim, urna tortor porttitor nibh, tempus blandit diam augue sed magna. 
+        Cras congue justo nec urna gravida, quis malesuada magna posuere. Sed fermentum ipsum et risus lobortis, nec dapibus sem malesuada.
+      </p>
+    </article>
+    <section class="image-area" aria-label="Blog introductory related image" id="categories" tabindex="0">
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1224c077-575e-482d-bb92-e78f6a257019.png" alt="Cozy and minimalist interior corner with natural decor and green plants on a light wooden table and white wall background" onerror="this.onerror=null; this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7af750f1-91ea-4b5a-a80a-ca90838415a0.png';" />
+    </section>
+  </main>
 
-    <main>
-        <section id="home">
-            <div class="container">
-                <h2>Welcome to My Website</h2>
-                <p>This is a simple, professional-looking website template.</p>
-            </div>
-        </section>
-
-        <section id="about">
-            <div class="container">
-                <h2>About Me</h2>
-                <p>Here you can add information about yourself or your business.</p>
-            </div>
-        </section>
-
-        <section id="services">
-            <div class="container">
-                <h2>My Services</h2>
-                <p>Detail the services you offer here.</p>
-            </div>
-        </section>
-
-        <section id="contact">
-            <div class="container">
-                <h2>Contact Me</h2>
-                <form id="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 My Professional Website. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <script>
+    // Placeholder for potential interactive JS if needed in the future.
+    // Currently no interactive behaviors requested.
+  </script>
 </body>
 </html>

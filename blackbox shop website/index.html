@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Handmade Bags</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* 
+    Custom scrollbar for product list if needed 
+
+    ::-webkit-scrollbar {
+      height: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: black;
+      border-radius: 10px;
+    }
+    */
+
+    /* Header cart icon reuse */
+    .cart-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: #111827;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    /* Smooth button shadow on hover */
+    button {
+      transition: background-color 0.25s ease, box-shadow 0.25s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-30">
+    <nav class="container mx-auto px-5 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-2 font-semibold text-lg text-gray-800">
+        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"></path></svg>
+        <span>Handmade bags</span>
+      </a>
+      <ul class="hidden md:flex space-x-8 text-gray-700 text-sm font-medium">
+        <li><a href="#" class="text-green-600 border-b-2 border-green-600 pb-1">Home</a></li>
+        <li><a href="#" class="hover:text-green-600 transition">New</a></li>
+        <li><a href="#" class="hover:text-green-600 transition">Shopping bags</a></li>
+        <li><a href="#" class="hover:text-green-600 transition">Backpack bags</a></li>
+        <li><a href="#" class="hover:text-green-600 transition">Cosmetic bags</a></li>
+        <li><a href="#" class="hover:text-green-600 transition">About us</a></li>
+        <li><a href="#" class="hover:text-green-600 transition">Contact</a></li>
+      </ul>
+      <button aria-label="View shopping cart" class="cart-icon ml-4 focus:outline-none">
+        <svg fill="none" viewBox="0 0 24 24" aria-hidden="true" role="img">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-5 flex flex-col md:flex-row items-center md:space-x-10">
+      <div class="md:w-1/2 text-center md:text-left">
+        <h1 class="text-4xl font-extrabold mb-4 leading-tight">
+          New<br />
+          collection
+        </h1>
+        <p class="text-gray-700 mb-8 max-w-md">
+          The highest quality products, sewn in Ireland from Irish materials. Quality and durability for years.
+        </p>
+        <button class="bg-green-600 text-white px-6 py-3 rounded shadow hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-300">
+          New collection
+        </button>
+      </div>
+      <div class="md:w-1/2 flex justify-center md:justify-end space-x-5 mt-10 md:mt-0 relative max-w-xl w-full">
+        <div class="flex space-x-5">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/57098b65-7032-45b2-8cd7-67893e8f0f4b.png" alt="Handmade tote bag with green leafy botanical pattern on beige fabric, standing upright with white handles" class="shadow-lg rounded-md object-cover w-40" onerror="this.style.display='none'"/>
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5408a02a-8a7b-416d-bb32-76a1ff6addb4.png" alt="Handmade tote bag featuring purple butterfly pattern on cream fabric, positioned upright with white handles and soft lighting" class="shadow-lg rounded-md object-cover w-40" onerror="this.style.display='none'"/>
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c547e0f6-51fe-4b0f-a266-87f9e45e5273.png" alt="Handmade tote bag decorated with black leaf pattern on off-white fabric, shown upright with white handles and natural shadow" class="shadow-lg rounded-md object-cover w-40" onerror="this.style.display='none'"/>
+        </div>
+        <div class="absolute left-0 bottom-0 -translate-x-20 translate-y-10">
+          <div class="space-y-2">
+            <div class="bg-yellow-200 w-20 h-14 rounded shadow-md transform rotate-3 border border-yellow-400"></div>
+            <div class="bg-yellow-300 w-20 h-14 rounded shadow-md transform -rotate-3 border border-yellow-500"></div>
+            <div class="bg-yellow-400 w-20 h-14 rounded shadow-md transform rotate-2 border border-yellow-600"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Grid -->
+  <section class="container mx-auto px-5 py-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
+      <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/101e47a0-b387-4cce-ab6b-17ce11155af1.png" alt="Handmade cotton tote bag decorated with pink and gray butterfly patterns named Bags Cathrine" class="mb-5 object-contain max-h-48" onerror="this.style.display='none'"/>
+        <h3 class="text-lg font-semibold mb-1 text-center">Bags Cathrine</h3>
+        <p class="text-gray-600 text-center">Price 30 EUR</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/da914b97-bd2b-4680-a768-a42027aa1cf6.png" alt="Handmade cotton tote bag decorated with a subtle pink butterfly pattern named Bags Mary" class="mb-5 object-contain max-h-48" onerror="this.style.display='none'"/>
+        <h3 class="text-lg font-semibold mb-1 text-center">Bags Mary</h3>
+        <p class="text-gray-600 text-center">Price 30 EUR</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a4844f93-d735-43f7-be59-d671c8d9b60d.png" alt="Handmade cotton tote bag with colorful floral pattern named Bag Sandra" class="mb-5 object-contain max-h-48" onerror="this.style.display='none'"/>
+        <h3 class="text-lg font-semibold mb-1 text-center">Bag Sandra</h3>
+        <p class="text-gray-600 text-center">Price 30 EUR</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e12b0bf6-2d17-411b-bb15-318f5dcaa60f.png" alt="Handmade cotton tote bag decorated with green leafy design named Bags Jenny" class="mb-5 object-contain max-h-48" onerror="this.style.display='none'"/>
+        <h3 class="text-lg font-semibold mb-1 text-center">Bags Jenny</h3>
+        <p class="text-gray-600 text-center">Price 40 EUR</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
