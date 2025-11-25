@@ -1,0 +1,174 @@
+/* --- General Setup --- */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0; /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.menu-container {
+    width: 100%;
+    max-width: 1200px; /* Wider to fit more columns */
+    background-color: #ffffff;
+    padding: 40px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Header --- */
+.menu-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.menu-header h1 {
+    font-size: 2.5em;
+    color: #CC0000; /* Signature fast-food red */
+    margin: 0 0 5px 0;
+    font-weight: 900;
+}
+
+.menu-header p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* --- Category Headings --- */
+.menu-category {
+    margin-bottom: 40px;
+}
+
+.menu-category h2 {
+    font-size: 2em;
+    color: #333;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #FFC72C; /* McDonald's Yellow */
+    font-weight: 700;
+}
+
+/* --- Menu Grid Layout --- */
+.menu-grid {
+    display: grid;
+    /* Allows 4 items per row on large screens, adjusting dynamically */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+/* --- Individual Menu Card (Item) --- */
+.menu-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s;
+}
+
+.menu-item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-area {
+    position: relative;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background behind image */
+    text-align: center;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-image {
+    width: 100%;
+    max-height: 140px;
+    object-fit: contain;
+    /* Placeholder styles */
+    background-color: #eee;
+    border: 1px dashed #ccc;
+    content: ' ';
+    /* This makes the image placeholder act as a block */
+    display: block;
+}
+
+/* Add placeholder text to indicate the image purpose */
+.item-image[alt*="Burger"]::after { content: "🍔 Burger Image"; }
+.item-image[alt*="Hotdog"]::after { content: "🌭 Hotdog Image"; }
+.item-image[alt*="Sandwich"]::after { content: "🥪 Sandwich Image"; }
+.item-image[alt*="Drink"]::after { content: "🥤 Drink Image"; }
+.item-image::after {
+    display: block;
+    padding-top: 50px;
+    font-size: 0.9em;
+    color: #999;
+}
+
+
+/* Badge like 'Better' or 'New' */
+.badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 0 0 5px 0;
+}
+.badge.better { background-color: #CC0000; } /* Red */
+.badge.new { background-color: #00A3A3; } /* Teal/Blue */
+
+
+.item-info {
+    padding: 15px;
+    text-align: left;
+    flex-grow: 1; /* Pushes the button to the bottom */
+}
+
+.item-name {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 5px 0;
+    min-height: 35px; /* Ensures names don't shift height too much */
+}
+
+.item-price {
+    font-size: 1.5em;
+    font-weight: 900;
+    color: #333;
+    margin: 0;
+}
+
+/* Order Button */
+.order-btn {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #FFC72C; /* McDonald's Yellow/Gold */
+    color: #333;
+    border: none;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.order-btn:hover {
+    background-color: #ffbb00;
+}
+
+/* --- Footer --- */
+.menu-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    color: #888;
+    font-size: 0.9em;
+}

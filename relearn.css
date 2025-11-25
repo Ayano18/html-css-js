@@ -1,13 +1,6 @@
-body {
-    background-image: url('makima.jpg');
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-position: center center;
-    /*
-    background-attachment: fixed;
-    */
-    padding-bottom: 100%;
-}
-.index{
-    display: block;
-}
+#try{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px
+};
