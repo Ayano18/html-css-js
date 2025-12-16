@@ -34,7 +34,8 @@ function printTime() {
     }
 
 
-    month = month + 1; document.getElementById("test").innerHTML = hours+":"+mins+":"+secs;
+    month = month + 1; 
+    document.getElementById("test").innerHTML = hours + ":" + mins + ":" + secs;
     document.getElementById("ttt").innerHTML = day + ", " + date + "/" + month + "/" + year;
 }
 setInterval(printTime, 1000);
