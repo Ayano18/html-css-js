@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even or Odd NUMBERS</title>
+    <style>
+        body{
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Horizontal centering */
+            align-items: center;     /* Vertical centering */
+            min-height: 100vh;       /* 100% of the viewport height */
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid;
+            margin: 0px;
+            padding: 20px;
+            background-color: lightslategray;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <input type="number" id="checknum">
+        <button type="button" id="btn">check</button>
+        <p id="output">.</p>
+        
+    </div>
+</body>
+<script>
+    const btn = document.getElementById('btn');
+
+    btn.addEventListener('click', () => {
+        const number = document.getElementById('checknum').value;
+        let value = parseInt(number);
+        const par = document.getElementById('output');
+
+        if(isNaN(value)){
+            par.textContent = "please input fields";
+            return;
+        }
+
+        if(value % 2 === 0){
+            par.textContent = number + " is even";
+        } else {
+            par.textContent = number + " is odd";
+        }
+    });
+    
+</script>
+</html>

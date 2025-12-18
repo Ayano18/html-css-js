@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinematics</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        #top{
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        #centralized{
+            display: flex;
+            justify-content: center;
+            margin: 5px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="top">
+            <input type="number" id="distance" placeholder="Distance">
+            <input type="number" id="speed" placeholder="Speed">
+            <button type="button" id="calc">Calculate</button>
+        </div>
+        <div id="centralized">
+            <p id="paragraph">Time = Distance/Velocity</p>
+        </div>
+    </div>
+</body>
+<script>
+    const btn = document.getElementById('calc');
+
+    btn.addEventListener('click', () => {
+        const distance = document.getElementById('distance');
+        const speed = document.getElementById('speed');
+        const txt = document.getElementById('paragraph');
+
+
+        let DistanceValue = parseFloat(distance.value);
+        let SpeedValue = parseFloat(speed.value);
+
+        if(isNaN(DistanceValue) && isNaN(SpeedValue)){
+            txt.textContent = "please input fields";
+            return;
+        }
+
+        txt.textContent = (DistanceValue / SpeedValue) * 60.0 + " minutes";
+    });
+</script>
+</html>
