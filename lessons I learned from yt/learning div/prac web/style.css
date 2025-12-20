@@ -1,16 +1,38 @@
 .first {
-    background-color: lightblue;
+    
 }
 .second {
     background-color: lightpink;
 }
-.third {
-    background-color: lightblue;
+
+.one{
+
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px;
+    scrollbar-width: none;
+
+    scroll-snap-type: x mandatory; 
+
 }
-.in1, 
-.in2,
-.in3{
+.one > div{
+    background-color: lightsteelblue;
+    flex: 0 0 200px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
+    scroll-snap-align: start;
+    transition: 0.5s;
+}
+.one > div:hover{
+    transition: 1s;
+    flex: 0 0 300px;
+    background-color: lightskyblue;
+    flex-grow: 2;
+}
+.one button{
+    cursor: pointer;
 }

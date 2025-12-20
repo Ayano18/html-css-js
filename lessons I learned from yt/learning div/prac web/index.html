@@ -1,24 +1,59 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Web</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="first">
-            <div class="in1">
-                <p>1</p>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="first">
+            <div class="one">
+                <div>
+                    1
+                    <button class="btn1">tap</button>
+                </div>
+                <div>
+                    2
+                    <button class="btn2">tap</button>
+                </div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
             </div>
         </div>
         <div class="second">
-            <div class="in2">
-                <p>2</p>
+            <div class="two">
+                <p class="txt">this is the text when I tap the button</p>
+                <p class="txts">this text was tapped</p>
             </div>
         </div>
-        <div class="third">
-            <div class="in3">
-                <p>3</p>
-            </div>
-        </div>
-    </body>
+</body>
+<script>
+    const btn = document.querySelector('.btn1');
+    const txt = document.querySelector('.txt');
+    txt.style.display = 'none';
+    btn.addEventListener('click', () => {
+        if(txt.style.display === 'none'){
+            txt.style.display = 'block';
+        } else {
+            txt.style.display = 'none';
+        }
+    });
+    const btn2 = document.querySelector('.btn2');
+    const txts = document.querySelector('.txts');
+    txts.style.display = 'none';
+    btn2.addEventListener('click', () => {
+        if(txts.style.display === 'none'){
+            txts.style.display = 'block';
+        } else {
+            txts.style.display = 'none';
+        }
+    });
+</script>
 </html>

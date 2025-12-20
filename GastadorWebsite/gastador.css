@@ -32,10 +32,10 @@
 }
 #Home{
   background-image: url(2.jpg);
-  background-size: cover;
+  background-size: 99% 100%;
   background-repeat: no-repeat;
   background-position: center;
-  height: 1000px;
+  height: 100vh;
 }
 
 .info{
@@ -48,19 +48,64 @@
 }
 
 .pic{
-  display: inline-block;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: lightblue;
+  gap: 50px;
 }
-.pic img{
-  width: 500px;
-  height: 500px;
-  border-radius: 100%;
+.containerpic img{
+  width: 700px;
+  border-radius: 30px;
 }
 .description{
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  width: 700px;
+  font-size: 25px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: justify;
   background-color: lightpink;
+  padding: 20px;
+  border-radius: 20px;
 }
+
+.container{
+  background-color: lightsalmon;
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  padding: 20px;
+  gap: 20px;
+
+  scrollbar-width: none;
+  
+  scroll-snap-type: x mandatory; 
+  -webkit-overflow-scrolling: touch;
+}
+.container > div{
+  flex: 0 0 200px;               
+  height: 200px;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 20px;
+  gap: 20px;
+
+
+  scroll-snap-align: start;
+
+  transition: 0.5s;
+}
+.container > div:hover {
+  transition: 1s;
+  flex: 0 0 400px; /* Widens to 350px on hover */
+  background-color: #e0e0e0; 
+  flex-grow: 2;
+}
+.container img{
+  width: 150px;
+  border-radius: 10px;
+}
+
+
