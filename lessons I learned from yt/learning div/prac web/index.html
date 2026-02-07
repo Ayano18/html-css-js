@@ -17,9 +17,18 @@
                     2
                     <button class="btn2">tap</button>
                 </div>
-                <div>3</div>
-                <div>4</div>
-                <div>5</div>
+                <div>
+                    3
+                    <button class="btn3">tap</button>
+                </div>
+                <div>
+                    4
+                    <button class="btn4">tap</button>
+                </div>
+                <div>
+                    5
+                    <button class="btn5">tap</button>
+                </div>
                 <div>6</div>
                 <div>7</div>
                 <div>8</div>
@@ -29,14 +38,18 @@
         </div>
         <div class="second">
             <div class="two">
-                <p class="txt">this is the text when I tap the button</p>
-                <p class="txts">this text was tapped</p>
+                <p class="txt1">text 1</p>
+                <p class="txt2">text 2</p>
+                <p class="txt3">text 3</p>
+                <p class="txt4">text 4</p>
+                <p class="txt5">text 5</p>
             </div>
         </div>
 </body>
 <script>
+    
     const btn = document.querySelector('.btn1');
-    const txt = document.querySelector('.txt');
+    const txt = document.querySelector('.txt1');
     txt.style.display = 'none';
     btn.addEventListener('click', () => {
         if(txt.style.display === 'none'){
@@ -45,14 +58,48 @@
             txt.style.display = 'none';
         }
     });
+
     const btn2 = document.querySelector('.btn2');
-    const txts = document.querySelector('.txts');
-    txts.style.display = 'none';
+    const txt2 = document.querySelector('.txt2');
+    txt2.style.display = 'none';
     btn2.addEventListener('click', () => {
-        if(txts.style.display === 'none'){
-            txts.style.display = 'block';
+        if(txt2.style.display === 'none'){
+            txt2.style.display = 'block';
         } else {
-            txts.style.display = 'none';
+            txt2.style.display = 'none';
+        }
+    });
+
+    const btn3 = document.querySelector('.btn3');
+    const txt3 = document.querySelector('.txt3');
+    txt3.style.display = 'none';
+    btn3.addEventListener('click', () => {
+        if(txt3.style.display === 'none'){
+            txt3.style.display = 'block';
+        } else {
+            txt3.style.display = 'none';
+        }
+    });
+
+    const btn4 = document.querySelector('.btn4');
+    const txt4 = document.querySelector('.txt4');
+    txt4.style.display = 'none';
+    btn4.addEventListener('click', () => {
+        if(txt4.style.display === 'none'){
+            txt4.style.display = 'block';
+        } else {
+            txt4.style.display = 'none';
+        }
+    });
+
+    const btn5 = document.querySelector('.btn5');
+    const txt5 = document.querySelector('.txt5');
+    txt5.style.display = 'none';
+    btn5.addEventListener('click', () => {
+        if(txt5.style.display === 'none'){
+            txt5.style.display = 'block';
+        } else {
+            txt5.style.display = 'none';
         }
     });
 </script>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <style>
+
+        body{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            /* background-color: #ADEBB3; */
+            
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #ptime, #poutput {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        #btns {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="ptime">
+            <p>Pomodoro Technique</p>
+        </div>
+        <div id="poutput">
+            <p id="time"></p>
+        </div>
+        <div id="btns">
+            <button id="press">tap</button>
+            <button id="stop">stop</button>
+        </div>
+    </div>
+    
+    
+    
+    
+</body>
+<script>
+    //const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    const timeDisplay = document.querySelector('#time');
+    const btn = document.querySelector('#press');
+    const btnstop = document.querySelector('#stop');
+
+    let timeLeft = 10; 
+    let timeRight = 5; 
+    let countdown;
+    let isRunning = false;
+    
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainderSeconds = seconds % 60;
+        return `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+    }
+    
+    btn.addEventListener('click', () => {
+        if (!isRunning) {
+            isRunning = true;
+            Pomo();
+        }
+    });
+
+    btnstop.addEventListener('click', () => {
+        clearTimeout(countdown);
+        isRunning = false;
+    });
+
+    function Pomo() { //this is working time
+        if (timeLeft < 0){
+            Doro();
+            return;
+        }
+
+        timeDisplay.textContent = "Work Time: " + formatTime(timeLeft);
+        
+        timeLeft--;
+
+        countdown = setTimeout(Pomo, 1000);
+
+    }
+
+
+    function Doro(){ //this is break time
+        if(timeRight <= 0){
+            timeLeft = 10;
+            Pomo();
+            return;
+        }
+
+        timeDisplay.textContent = "Break Time: " + formatTime(timeRight);
+
+        timeRight--;
+
+        countdown = setTimeout(Doro, 1000);
+
+    }
+
+
+
+    /*
+    btn.addEventListener('click', async () => {
+        for(let i = 10; i >= 0; i--){
+            time.innerHTML = i;
+            
+            await sleep(1000); 
+        }
+
+        for(let i = 0; i <= 10; i++){
+            time.innerHTML = i;
+            
+            await sleep(1000); 
+        }
+
+    });
+    */
+
+
+</script>
+</html>
