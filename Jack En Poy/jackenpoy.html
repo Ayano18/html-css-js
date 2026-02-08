@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bato Bato Pick</title>
+    <style>
+        body{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .images{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .buttons{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        #rockimg, #paperimg, #scissorimg{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="images">
+            <img id="rockimg" src="rock.jpg" alt="rock">
+            <img id="paperimg" src="paper.jpg" alt="paper">
+            <img id="scissorimg" src="scissor.jpg" alt="scissor">
+        </div>
+    
+        <div class="buttons">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissor">Scissor</button>
+        </div>
+    </div>
+    
+    
+</body>
+
+<script>
+    const rockbtn = document.querySelector('#rock');
+    const paperbtn = document.querySelector('#paper');
+    const scissorbtn = document.querySelector('#scissor');
+
+    const rockimg = document.querySelector('#rockimg');
+    const paperimg = document.querySelector('#paperimg');
+    const scissorimg = document.querySelector('#scissorimg');
+
+    rockbtn.addEventListener('click', () => {
+        if(rockimg.style.display === 'block'){
+            rockimg.style.display = 'none';
+        } else {
+            rockimg.style.display = 'block';
+        }
+    });
+
+    paperbtn.addEventListener('click', () => {
+        if(paperimg.style.display === 'block'){
+            paperimg.style.display = 'none';
+        } else {
+            paperimg.style.display = 'block';
+        }
+    });
+
+    scissorbtn.addEventListener('click', () => {
+        if(scissorimg.style.display === 'block'){
+            scissorimg.style.display = 'none';
+        } else {
+            scissorimg.style.display = 'block';
+        }
+    });
+
+</script>
+</html>
