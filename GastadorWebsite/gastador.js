@@ -1,4 +1,4 @@
-
+const linwel = document.querySelector(".linwel");
 const tim = document.querySelector(".tim");
 const marc = document.querySelector(".marc");
 const chin = document.querySelector(".chin");
@@ -10,8 +10,7 @@ const alyssa = document.querySelector(".alyssa");
 const kurt = document.querySelector(".kurt");
 
 
-function linwels(){
-    const linwel = document.querySelector(".linwel");
+function toggleLinwel(){
     if (linwel.style.display === "none" || linwel.style.display === "") {
         linwel.style.display = "block";
     } else {
@@ -19,7 +18,7 @@ function linwels(){
     }
 }
 
-function tims(){
+function toggleTim(){
     if (tim.style.display === "none" || tim.style.display === "") {
         tim.style.display = "block";
     } else {
