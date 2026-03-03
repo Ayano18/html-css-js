@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ceramic Studio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Georgia', serif;
+      color: #2c2c2c;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 60px;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    }
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #8b2a2a;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: lowercase;
+    }
+    .logo svg { margin-bottom: 2px; }
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-family: 'Arial', sans-serif;
+      font-weight: 500;
+    }
+    .nav-links a { text-decoration: none; color: #2c2c2c; }
+    .nav-links a:hover { color: #8b2a2a; }
+    .cart-icon { font-size: 20px; color: #8b2a2a; cursor: pointer; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: calc(100vh - 65px);
+      background: linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 60%, #555 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1600&q=80') center/cover no-repeat;
+      opacity: .55;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 680px; padding: 0 20px; }
+    .hero-content h1 { font-size: 58px; font-weight: 700; margin-bottom: 22px; line-height: 1.1; }
+    .hero-content p { font-size: 16px; line-height: 1.7; margin-bottom: 36px; font-family: Arial, sans-serif; }
+    .btn {
+      display: inline-block;
+      background: #8b2a2a;
+      color: #fff;
+      padding: 14px 40px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      font-family: Arial, sans-serif;
+    }
+    .btn:hover { background: #a33333; }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 80px 60px; }
+
+    /* ── BESTSELLERS ── */
+    .bestsellers { background: #fff; }
+    .bestsellers h2,
+    .employees h2 { text-align: center; font-size: 36px; font-weight: 700; margin-bottom: 50px; }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .product-card img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+    }
+    .product-card .product-name { margin-top: 12px; font-size: 15px; font-family: Arial, sans-serif; }
+    .product-card .product-price { font-weight: 700; font-size: 15px; font-family: Arial, sans-serif; }
+
+    /* ── NEW COLLECTION ── */
+    .new-collection { background: #ebebeb; }
+    .collection-inner {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .collection-text { flex: 0 0 340px; }
+    .collection-text h2 { font-size: 36px; font-weight: 700; margin-bottom: 20px; }
+    .collection-text p { font-size: 15px; line-height: 1.75; font-family: Arial, sans-serif; color: #444; margin-bottom: 30px; }
+    .collection-images {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .collection-images img {
+      width: 100%; height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .collection-images img:last-child { height: 100%; grid-row: 1 / 3; }
+
+    /* 2-col layout: left text, right 2x2 grid */
+    .collection-images {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 10px;
+      height: 450px;
+    }
+    .collection-images img:nth-child(1) { grid-column:1; grid-row:1; }
+    .collection-images img:nth-child(2) { grid-column:1; grid-row:2; }
+    .collection-images img:nth-child(3) { grid-column:2; grid-row:1/3; height:100%; }
+
+    /* ── WORKSHOPS ── */
+    .workshops { background: #fff; }
+    .workshops-inner {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .workshops-inner img {
+      flex: 0 0 48%;
+      width: 48%;
+      height: 460px;
+      object-fit: cover;
+    }
+    .workshop-text h2 { font-size: 38px; font-weight: 700; margin-bottom: 20px; }
+    .workshop-text p { font-size: 15px; line-height: 1.75; font-family: Arial, sans-serif; color: #444; margin-bottom: 30px; }
+
+    /* ── EMPLOYEES ── */
+    .employees { background: #e8e8e8; }
+    .employees-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .employee-card img {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 16px;
+      display: block;
+      filter: grayscale(100%);
+    }
+    .employee-card h3 { font-size: 18px; font-weight: 400; margin-bottom: 14px; font-family: Arial, sans-serif; }
+    .employee-card p { font-size: 14px; line-height: 1.7; font-family: Arial, sans-serif; color: #555; }
+
+    /* ── OUR STORY ── */
+    .our-story {
+      position: relative;
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #1a1a1a, #444);
+      color: #fff;
+      padding: 80px 60px;
+    }
+    .story-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=1600&q=80') center/cover no-repeat;
+      opacity: .45;
+    }
+    .story-content { position: relative; z-index: 1; max-width: 540px; }
+    .story-content h2 { font-size: 42px; font-weight: 700; margin-bottom: 20px; }
+    .story-content p { font-size: 15px; line-height: 1.75; font-family: Arial, sans-serif; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1a1a1a;
+      color: #ccc;
+      padding: 36px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-col { display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-family: Arial, sans-serif; }
+    .footer-col a { color: #ccc; text-decoration: none; }
+    .footer-col a:hover { color: #fff; }
+    .footer-social { display: flex; gap: 16px; font-size: 20px; }
+    .footer-social a { color: #ccc; text-decoration: none; }
+    .footer-social a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <svg width="32" height="20" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 18 Q10 4 18 8 Q22 10 25 6 Q30 0 38 5 Q44 9 48 4" stroke="#8b2a2a" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <circle cx="18" cy="8" r="2" fill="#8b2a2a"/>
+      <circle cx="30" cy="4" r="2" fill="#8b2a2a"/>
+      <circle cx="42" cy="6" r="2" fill="#8b2a2a"/>
+    </svg>
+    ceramic
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Shop</a></li>
+    <li><a href="#">Workshop</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <span class="cart-icon">🛒</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding:0">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <h1>Ceramics studio</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec orci massa, dapibus quis molestie sit amet, pharetra vitae dolor. Praesent auctor, dui id maximus sagittis, lectus enim pharetra quam, ut laoreet tortor metus ut ipsum.</p>
+    <button class="btn">Show More</button>
+  </div>
+</section>
+
+<!-- BESTSELLERS -->
+<section class="bestsellers">
+  <h2>Bestsellers</h2>
+  <div class="products-grid">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&q=80" alt="Sara Mug">
+      <div class="product-name">Sara Mug</div>
+      <div class="product-price">20 USD</div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1482482097755-0b595893ba63?w=400&q=80" alt="Moon Plate">
+      <div class="product-name">Moon Plate</div>
+      <div class="product-price">30 USD</div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=400&q=80" alt="Silver Set">
+      <div class="product-name">Silver Set</div>
+      <div class="product-price">40 USD</div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&q=80" alt="Workshops for adults">
+      <div class="product-name">Workshops for adults</div>
+      <div class="product-price">210 USD</div>
+    </div>
+  </div>
+</section>
+
+<!-- NEW COLLECTION -->
+<section class="new-collection">
+  <div class="collection-inner">
+    <div class="collection-text">
+      <h2>New collection</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum sapien ac sapien vestibulum posuere. Praesent congue dui nec lectus tincidunt elementum. Donec viverra a neque vel egestas. Ut quis urna orci. Nullam sollicitudin est et quam rhoncus, nec imperdiet sem efficitur. Etiam aliquam posuere hendrerit. Curabitur egestas sed nisl rhoncus finibus.</p>
+      <button class="btn">More</button>
+    </div>
+    <div class="collection-images">
+      <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=500&q=80" alt="Collection 1">
+      <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=500&q=80" alt="Collection 2">
+      <img src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?w=700&q=80" alt="Collection 3">
+    </div>
+  </div>
+</section>
+
+<!-- WORKSHOPS -->
+<section class="workshops">
+  <div class="workshops-inner">
+    <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&q=80" alt="Workshop">
+    <div class="workshop-text">
+      <h2>Workshops</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum sapien ac sapien vestibulum posuere. Praesent congue dui nec lectus tincidunt elementum. Donec viverra a neque vel egestas. Ut quis urna orci. Nullam sollicitudin est et quam rhoncus, nec imperdiet sem efficitur. Etiam aliquam posuere hendrerit. Curabitur egestas sed nisl rhoncus finibus.</p>
+      <button class="btn">Subscribe</button>
+    </div>
+  </div>
+</section>
+
+<!-- EMPLOYEES -->
+<section class="employees">
+  <h2>Our employees</h2>
+  <div class="employees-grid">
+    <div class="employee-card">
+      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80" alt="Mary Smith">
+      <h3>Mary Smith</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum sapien ac sapien vestibulum posuere. Praesent congue dui nec lectus tincidunt elementum.</p>
+    </div>
+    <div class="employee-card">
+      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80" alt="James Jones">
+      <h3>James Jones</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum sapien ac sapien vestibulum posuere. Praesent congue dui nec lectus tincidunt elementum.</p>
+    </div>
+    <div class="employee-card">
+      <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&q=80" alt="Emily Murphy">
+      <h3>Emily Murphy</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum sapien ac sapien vestibulum posuere. Praesent congue dui nec lectus tincidunt elementum.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="our-story" style="padding:80px 60px;">
+  <div class="story-bg"></div>
+  <div class="story-content">
+    <h2>Our story</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum sapien ac sapien vestibulum posuere. Praesent congue dui nec lectus tincidunt elementum. Donec viverra a neque vel egestas. Ut quis urna orci. Nullam sollicitudin est et quam rhoncus, nec imperdiet sem efficitur. Etiam aliquam posuere hendrerit. Curabitur egestas sed nisl rhoncus finibus.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-col">
+    <span>02-233 Warszawa</span>
+    <span>Al. Jerozolimskie 12</span>
+  </div>
+  <div class="footer-col">
+    <span>email@contact.com</span>
+    <span>+48 500 500 500</span>
+  </div>
+  <div class="footer-col">
+    <a href="#">Store Regulations</a>
+    <a href="#">Privacy policy</a>
+  </div>
+  <div class="footer-col">
+    <a href="#">Delivery</a>
+    <a href="#">Returns &amp; exchanges</a>
+  </div>
+  <div class="footer-social">
+    <a href="#" title="Facebook">&#x1F426; f</a>
+    <a href="#" title="Twitter">&#x1F426; t</a>
+    <a href="#" title="Instagram">&#x1F426; ig</a>
+  </div>
+</footer>
+
+</body>
+</html>
