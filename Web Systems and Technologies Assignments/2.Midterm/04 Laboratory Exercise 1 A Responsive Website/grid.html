@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Redesign: ARNGREN.net</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #fcfcfc;
+            color: #222;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: Arial, sans-serif;
+            margin-top: 0;
+        }
+
+        .grid-container {
+            display: grid;
+            margin: 0 auto;
+            grid-template-areas:
+                "header"
+                "nav"
+                "main"
+                "footer";
+            gap: 15px;
+        }
+
+        header {
+            grid-area: header;
+            background-color: #d14a42;
+            color: white;
+            padding: 30px;
+            border: 3px solid #660000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-title-box {
+            text-align: center;
+        }
+
+        .arngren-title {
+            font-size: 3em;
+            letter-spacing: 5px;
+            color: #008000;
+            margin: 0;
+            text-shadow: 2px 2px #333;
+            text-decoration: underline;
+        }
+
+        .original-items-box {
+            border: 2px solid green;
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: #7c42e8;
+            padding: 15px;
+            border: 3px solid #330066;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 80px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+            background-color: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            border: 1px solid white;
+        }
+
+        main {
+            grid-area: main;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        section {
+            background-color: #d8f5fa;
+            border: 3px solid #4a90e2;
+            padding: 20px;
+        }
+
+        section h2 {
+            border-bottom: 2px solid #4a90e2;
+            color: #003366;
+            padding-bottom: 10px;
+        }
+
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 10px;
+        }
+
+        .product-item {
+            border: 1px dashed gray;
+            padding: 10px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transform: rotate(-1deg);
+        }
+
+        .product-item:nth-child(2n) {
+            transform: rotate(2deg);
+        }
+
+        .product-item:nth-child(3n) {
+            transform: rotate(-0.5deg);
+            border-color: green;
+        }
+
+        .product-img {
+            max-width: 100%;
+            height: 120px;
+            object-fit: contain;
+            border: 1px solid lightgray;
+            margin-bottom: 5px;
+        }
+
+        .product-info h4 {
+            font-size: 1.1em;
+            color: #d14a42;
+            margin: 5px 0;
+        }
+
+        .product-desc {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .price-box {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 1.3em;
+            background-color: yellow;
+            color: black;
+            padding: 5px;
+            border: 1px solid black;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: #76d059;
+            color: #003300;
+            padding: 20px;
+            text-align: center;
+            border: 3px solid #003300;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+
+            .arngren-title {
+                font-size: 2em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+
+        <header>
+            <div class="header-title-box">
+                <h1 class="arngren-title">www.ARNGREN.net</h1>
+                
+            </div>
+            <div class="original-items-box">
+                SIX SEVEN (67) arngren yarn / (07.11.2004 sabi ni mama)
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#kamera">Kamera/Video</a></li>
+                <li><a href="#biler">El-Biler & ATV</a></li>
+                <li><a href="#radiostyrt">Radiostyrt / RC</a></li>
+                <li><a href="#hobby">Hobby & RC</a></li>
+                <li><a href="#elektronikk">Elektronikk</a></li>
+                <li><a href="#spion">Spionting</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section>
+                <h2>Featured: Kamera & Gadgets</h2>
+                <div class="product-gallery">
+
+                    <div class="product-item">
+                        <img src="snoopycamera.jpg" alt="Trådløs Kamera" class="product-img">
+                        <div class="product-info">
+                            <h4>Trådløs Kamera</h4>
+                            <p class="product-desc">w/ Alarm & GSM - Compact Design</p>
+                            <span class="price-box">kr. 1999.-</span>
+                        </div>
+                    </div>
+
+                    <div class="product-item">
+                        <img src="snoopycamera.jpg" alt="44-Språk Oversetter" class="product-img">
+                        <div class="product-info">
+                            <h4>44-Språk Oversetter</h4>
+                            <p class="product-desc">Norsk/English/Many more</p>
+                            <span class="price-box">kr. 398.-</span>
+                        </div>
+                    </div>
+
+                    <div class="product-item">
+                        <img src="snoopygreencamera.jpg" alt="Spion Kamera" class="product-img">
+                        <div class="product-info">
+                            <h4>Spion Kamera</h4>
+                            <p class="product-desc">Hidden Camera w/ MicroSD slot</p>
+                            <span class="price-box">kr. 499.-</span>
+                        </div>
+                    </div>
+
+                    <div class="product-item">
+                        <img src="snoopyredcamera.jpg" alt="Kikkert m/Kamera" class="product-img">
+                        <div class="product-info">
+                            <h4>Kikkert med Kamera</h4>
+                            <p class="product-desc">4MP Digital Camera & LCD Skjerm</p>
+                            <span class="price-box">kr. 1598.-</span>
+                        </div>
+                    </div>
+
+                    <div class="product-item">
+                        <img src="snoopycamera.jpg" alt="Disko Lys" class="product-img">
+                        <div class="product-info">
+                            <h4>Disko-Lys</h4>
+                            <p class="product-desc">New! LED Party Lights.</p>
+                            <span class="price-box">kr. 599.-</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section>
+                <h2>Featured: Vehikel & Modelo</h2>
+                <div class="product-gallery">
+
+                    <div class="product-item">
+                        <img src="vehiclesnoopy.jpg" alt="Elbil Comarth" class="product-img">
+                        <div class="product-info">
+                            <h4>Elbil Comarth 2WD/4WD</h4>
+                            <p class="product-desc">2 eller 3 seter - The original image car!</p>
+                            <span class="price-box">kr. 79,998.-</span>
+                        </div>
+                    </div>
+
+                    <div class="product-item">
+                        <img src="motorsnoopy.jpg" alt="RC Flybil" class="product-img">
+                        <div class="product-info">
+                            <h4>RC Flybil (3ch)</h4>
+                            <p class="product-desc">120cm lang, Medieval LokoMotor</p>
+                            <span class="price-box">kr. 249.-</span>
+                        </div>
+                    </div>
+
+                    <div class="product-item">
+                        <img src="motorsnoopy.jpg" alt="Electric ATV" class="product-img">
+                        <div class="product-info">
+                            <h4>Elektrisk-ATV</h4>
+                            <p class="product-desc">Powerful motor! 45km/h top speed</p>
+                            <span class="price-box">kr. 3999.-</span>
+                        </div>
+                    </div>
+
+                    <div class="product-item">
+                        <img src="vehiclesnoopy.jpg" alt="Toy Car" class="product-img">
+                        <div class="product-info">
+                            <h4>RC El-Biler til Barn</h4>
+                            <p class="product-desc">Fun toy cars for young drivers.</p>
+                            <span class="price-box">kr. 6998.-</span>
+                        </div>
+                    </div>
+
+                    <div class="product-item">
+                        <img src="motorsnoopy.jpg" alt="Toy Tank" class="product-img">
+                        <div class="product-info">
+                            <h4>Old Motor 72cm Lang</h4>
+                            <p class="product-desc">Replica model with realistic sounds</p>
+                            <span class="price-box">kr. 998.-</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 Student Web Systems and Technologies: Laboratory Exercise - Ref: Arngren.net</p>
+            <p>Arngren is a legendary classic. Reject the worst design, but align with modern CSS!</p>
+        </footer>
+
+    </div> </body>
+</html>

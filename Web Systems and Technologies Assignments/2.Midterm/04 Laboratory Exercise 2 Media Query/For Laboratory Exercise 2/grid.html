@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anita Magsaysay-Ho</title>
+    <style>
+        
+        body {
+            background-color: #1a1c1a;
+            color: #e0d7c6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #d4a373;
+            border-bottom: 2px solid #d4a373;
+            padding-bottom: 10px;
+        }
+
+        .container {
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 5px;
+            margin: 30px 0;
+            padding: 15px;
+            background: #2a2d2a;
+            border-radius: 10px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #444;
+            transition: transform 0.3s ease;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.05);
+            border-color: #d4a373;
+        }
+
+        .bio {
+            line-height: 1.6;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: justify;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-left: 5px solid #d4a373;
+        }
+
+        .video-container {
+            margin-top: 40px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            border: 3px solid #d4a373;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Women with Baskets</h1>
+        <p><em>by Anita Magsaysay-Ho</em></p>
+
+        <div class="image-grid">
+            <img src="Women with Baskets/Women with Baskets/4.jpg" alt="Part 4">
+            <img src="Women with Baskets/Women with Baskets/3.jpg" alt="Part 3">
+            <img src="Women with Baskets/Women with Baskets/1.jpg" alt="Part 1">
+            <img src="Women with Baskets/Women with Baskets/6.jpg" alt="Part 6">
+            <img src="Women with Baskets/Women with Baskets/2.jpg" alt="Part 2">
+            <img src="Women with Baskets/Women with Baskets/5.jpg" alt="Part 5">
+        </div>
+
+        <div class="bio">
+            <h3>About the Artist</h3>
+            <p>
+                <strong>Anita Magsaysay-Ho</strong> (1914–2012) was a Filipino painter and the only female member of the 
+                "Thirteen Moderns," a group of artists who helped reform Philippine art. She is best known for her 
+                stylized portrayals of Filipina women engaged in daily tasks like harvesting, weaving, and selling 
+                fish. Her work often features rhythmic compositions, soft lighting, and a deep appreciation for 
+                the labor and spirit of rural women.
+            </p>
+        </div>
+
+        <div class="video-container">
+            <h3>Featured Content</h3>
+            <video controls>
+                <source src="Anita.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+</body>
+</html>

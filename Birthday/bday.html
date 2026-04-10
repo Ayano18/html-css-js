@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21st Birthday</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bday.css">
+</head>
+<body class="bg-[#001f3f] text-white">
+
+    <div id="splash-screen" onclick="openInvitation()" class="splash-screen">
+        <div class="splash-content text-center">
+            <p class="tracking-[0.4em] text-xs mb-6 opacity-60">YOU ARE INVITED</p>
+            <div class="h-[1px] w-20 bg-silver opacity-50 mx-auto mb-8"></div>
+            <div class="design-diamond">✦</div>
+            <h1 class="font-serif text-6xl md:text-8xl silver-text shimmer py-3">CLICK OPEN</h1>
+            <div class="design-diamond">✦</div>
+            <div class="h-[1px] w-20 bg-silver opacity-50 mx-auto mt-8"></div>
+            <p class="mt-10 tracking-[0.2em] font-light">SAVE THE DATE<br><span class="text-xl font-bold">19 . 04 . 2026</span></p>
+        </div>
+    </div>
+
+    <main id="main-content" class="hidden">
+        
+        <section class="min-h-screen flex flex-col items-center justify-center p-6" data-aos="fade-up">
+            <div class="relative group">
+                <div class="profile-glow"></div>
+                <div class="circle-profile-frame mx-auto">
+                    <img src="hansumme.jpg" alt="Celebrant" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <h2 class="font-serif text-5xl md:text-7xl mt-8 silver-text text-center">Timothy</h2>
+            <p class="tracking-[0.5em] text-lg opacity-60 uppercase mt-2 text-center">Turning 21</p>
+        </section>
+
+        <section class="min-h-screen flex flex-col items-center justify-center bg-navy-depth p-6 text-center">
+            <p class="tracking-[0.3em] silver-text mb-4" data-aos="fade-up">YOU ARE INVITED</p>
+            <h2 class="font-serif text-4xl md:text-6xl mb-8" data-aos="fade-up" data-aos-delay="100">Timothy's 21th Birthday</h2>
+            
+            <div id="countdown" class="flex gap-4 mb-10" data-aos="zoom-in" data-aos-delay="200">
+                <div class="timer-box"><span id="days">00</span><p>Days</p></div>
+                <div class="timer-box"><span id="hours">00</span><p>Hrs</p></div>
+                <div class="timer-box"><span id="minutes">00</span><p>Min</p></div>
+                <div class="timer-box"><span id="seconds">00</span><p>Sec</p></div>
+            </div>
+            <div class="date-badge" data-aos="fade-up" data-aos-delay="300">APRIL 19, 2026</div>
+        </section>
+
+        <section class="py-24 px-6 relative max-w-2xl mx-auto" data-aos="fade-up">
+            <h2 class="font-serif text-4xl md:text-5xl silver-text text-center mb-4">Event Chronicle</h2>
+            <p class="text-center opacity-60 tracking-widest mb-16 uppercase text-sm">Starts at 3:00 PM Afternoon</p>
+            
+            <div class="roadmap">
+                <div class="roadmap-spine"></div>
+                
+                <div class="roadmap-item flex items-center gap-6" data-aos="fade-left">
+                    <div class="roadmap-node">01</div>
+                    <div class="roadmap-card flex-1">
+                        <span class="text-xs silver-text">3:00 PM</span>
+                        <h4>Entrance of Program</h4>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item flex items-center gap-6" data-aos="fade-left" data-aos-delay="100">
+                    <div class="roadmap-node">02</div>
+                    <div class="roadmap-card flex-1">
+                        <span class="text-xs silver-text">4:00 PM</span>
+                        <h4>The 21 Program</h4>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item flex items-center gap-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="roadmap-node">03</div>
+                    <div class="roadmap-card flex-1">
+                        <span class="text-xs silver-text">5:00 PM</span>
+                        <h4>Blowing of Cake</h4>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item flex items-center gap-6" data-aos="fade-left" data-aos-delay="300">
+                    <div class="roadmap-node">04</div>
+                    <div class="roadmap-card flex-1">
+                        <span class="text-xs silver-text">5:10 PM</span>
+                        <h4>Eat</h4>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item flex items-center gap-6" data-aos="fade-left" data-aos-delay="400">
+                    <div class="roadmap-node">05</div>
+                    <div class="roadmap-card flex-1">
+                        <span class="text-xs silver-text">LATE</span>
+                        <h4>Enjoy</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="min-h-[80vh] flex flex-col items-center justify-center p-6 bg-navy-depth">
+            <h3 class="tracking-[0.3em] silver-text mb-6">LOCATION</h3>
+            <p class="text-2xl font-light mb-8 text-center">Cogon Lezo, Aklan</p>
+            <a href="https://maps.app.goo.gl/J3n4Lj45jwhyxRgr7" target="_blank" class="maps-btn">GET DIRECTIONS</a>
+        </section>
+
+        <section class="py-24 px-6 max-w-6xl mx-auto text-white">
+            <h2 class="font-serif text-4xl text-center mb-16 silver-text">The 21 Program</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="program-list-card" data-aos="fade-up">
+                    <h3 class="list-title">21 SHOTS</h3>
+
+                    <ol class="list-names list-decimal list-inside">
+                        <li>Mariano Lim</li>
+                        <li>Marcelino Lim</li>
+                        <li>Nerissa Lim</li>
+                        <li>Warren Austria</li>
+                        <li>Luger Paul Fuerte</li>
+                        <li>Arnulfo Esmeralda</li>
+                        <li>Nilo Bocacao</li>
+                        <li>Noli Bocacao</li>
+                        <li>John Loyd Bocacao</li>
+                        <li>Elen Bocacao</li>
+                        <li>Norlina Ili</li>
+                        <li>Melona Maatubang</li>
+                        <li>Leony Suner</li>
+                        <li>Merlyn Briones</li>
+                        <li>Ernie Laurente</li>
+                        <li>Mercy Montero</li>
+                        <li>Janel Rimano</li>
+                        <li>Jona Ibesate</li>
+                        <li>Perlita Bocacao</li>
+                        <li>Josephine Claud</li>
+                        <li>Ritche Maatubang</li>
+                    </ol>
+
+                </div>
+                <div class="program-list-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="list-title">21 BILLS</h3>
+
+                    <ol class="list-names list-decimal list-inside">
+                        <li>Leonel Bocacao</li>
+                        <li>Leona Jane Bocacao</li>
+                        <li>Ninalyn Bocacao</li>
+                        <li>Lealyn Bocacao</li>
+                        <li>Caren Joy Bocacao</li>
+                        <li>Judea Reyes</li>
+                        <li>Kurt Michael Seraspi</li>
+                        <li>Boboy Reyes</li>
+                        <li>Linwel Abayon</li>
+                        <li>Jaztine Ordas</li>
+                        <li>Alyssa Relecio</li>
+                        <li>Keneth Nacion</li>
+                        <li>Frank Harold Montero</li>
+                        <li>French Ian Montero</li>
+                        <li>Maimai Bocacao</li>
+                        <li>Angelo Gabrillo</li>
+                        <li>Matt Maatubang</li>
+                        <li>Ivan Briones</li>
+                        <li>Richard Briones</li>
+                        <li>Jerald Maatubang</li>
+                        <li>Mica Ella Bocacao</li>
+                    </ol>
+
+                </div>
+                <div class="program-list-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="list-title">21 CANDLES</h3>
+                    
+                    <ol class="list-names list-decimal list-inside">
+                        <li>Herdeth Lucerio</li>
+                        <li>Hazel Bocacao</li>
+                        <li>Jenny Malacad</li>
+                        <li>Josella Gabrillo</li>
+                        <li>Lolita Lim</li>
+                        <li>Chen Maatubang</li>
+                        <li>Janriel Clark Barredo</li>
+                        <li>Lorlyn Bocacao</li>
+                        <li>Anabel Montero</li>
+                        <li>Jyel Mae Ibesate</li>
+                        <li>Jiah Fae Ibesate</li>
+                        <li>Zairen Mae Lim</li>
+                        <li>Bliss Margaret Alvarez</li>
+                        <li>Gessel Maatubang</li>
+                        <li>Kea Kersten</li>
+                        <li>Florenda Inado</li>
+                        <li>Cecille Perlas</li>
+                        <li>Sherilyn Briones</li>
+                        <li>Benita Maatubang</li>
+                        <li>Jian Andriel Gabrillo</li>
+                        <li>Glea Villanueva</li>
+                    </ol>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="min-h-[70vh] flex flex-col items-center justify-center p-6 text-center">
+            <div class="mb-12" data-aos="fade-up">
+                <h3 class="silver-text tracking-widest mb-4">IMPORTANT REMINDERS</h3>
+                <p class="opacity-70 font-light max-w-sm mx-auto text-white">Your presence is our greatest gift. Please attend early</p>
+            </div>
+            <h2 class="font-serif text-3xl md:text-5xl italic silver-text shimmer text-center" data-aos="zoom-in">See you on my special day!</h2>
+        </section>
+
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="bday.js"></script>
+</body>
+</html>
