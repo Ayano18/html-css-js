@@ -7,7 +7,192 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="bday.css">
+
+    <style>
+        :root {
+            --navy: #001f3f;
+            --navy-depth: #001832;
+            --navy-light: #002a54;
+            --silver: #C0C0C0;
+            --silver-grad: linear-gradient(135deg, #bdc3c7 0%, #ffffff 50%, #8e9eab 100%);
+        }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+
+        /* Laptop / Large Desktop (Default styles above apply here) */
+        @media (min-width: 1025px) {
+            .roadmap { max-width: 600px; }
+        }
+
+        /* Tablet / Small Laptop */
+        @media (max-width: 1024px) {
+            .circle-profile-frame {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .timer-box {
+                min-width: 70px;
+                padding: 10px;
+            }
+
+            .program-list-card {
+                padding: 20px;
+            }
+        }
+
+        /* Mobile Devices */
+        @media (max-width: 640px) {
+            /* Adjusting Splash Screen Text */
+            .splash-content h1 {
+                font-size: 3.5rem !important; /* Forces smaller size on mobile */
+                letter-spacing: 0.1em;
+            }
+
+            /* Circle Profile Size for small screens */
+            .circle-profile-frame {
+                width: 220px;
+                height: 220px;
+            }
+
+            /* Adjusting the Timer/Countdown grid */
+            #countdown {
+                gap: 8px;
+            }
+
+            .timer-box {
+                min-width: 65px;
+                padding: 8px;
+            }
+
+            .timer-box span {
+                font-size: 1.2rem;
+            }
+
+            /* Roadmap spacing for mobile */
+            .roadmap-spine {
+                left: 15px;
+            }
+            
+            .roadmap-node {
+                width: 32px;
+                height: 32px;
+                font-size: 0.7rem;
+            }
+            
+            .roadmap-item {
+                gap: 15px;
+            }
+
+            .roadmap-card {
+                padding: 15px;
+            }
+
+            /* Program List Cards - Ensuring they don't look too cramped */
+            .program-list-card {
+                margin-bottom: 1rem;
+            }
+
+            .list-names {
+                font-size: 0.85rem;
+            }
+
+            /* Navigation/Buttons */
+            .maps-btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; background-color: var(--navy); }
+
+        /* Metallic Shimmer Effect */
+        .silver-text {
+            background: var(--silver-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+        }
+
+        .design-diamond { color: var(--silver); font-size: 1.5rem; }
+
+        .shimmer { animation: shimmerEffect 4s linear infinite; }
+        @keyframes shimmerEffect {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* Splash Screen (Slide-Up Animation) */
+        .splash-screen {
+            position: fixed; inset: 0; z-index: 999;
+            background: var(--navy);
+            display: flex; align-items: center; justify-content: center;
+            border: 12px solid var(--silver);
+            cursor: pointer; transition: transform 1.2s cubic-bezier(0.8, 0, 0.2, 1);
+        }
+        .hide-splash { transform: translateY(-100%); }
+
+        /* Circular Profile Frame */
+        .circle-profile-frame {
+            width: 250px; height: 250px; /* Matching size to the previous editorial box width */
+            border: 4px solid var(--silver);
+            border-radius: 50%;
+            overflow: hidden; position: relative; z-index: 2;
+            box-shadow: 0 0 30px rgba(192, 192, 192, 0.3);
+        }
+        .profile-glow {
+            position: absolute; inset: -20px;
+            background: var(--silver-grad); filter: blur(150px); opacity: 0.15;
+        }
+
+        @media (min-width: 768px) {
+            .circle-profile-frame { width: 300px; height: 300px; }
+        }
+
+        /* Chronicle Roadmap Styles */
+        .roadmap { position: relative; max-width: 500px; margin: 0 auto; }
+        .roadmap-spine {
+            position: absolute; left: 20px; top: 0; bottom: 0;
+            width: 2px; background: rgba(192, 192, 192, 0.2);
+        }
+        .roadmap-node {
+            flex-shrink: 0; width: 40px; height: 40px;
+            background: var(--navy); border: 1px solid var(--silver);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: var(--silver); font-size: 0.8rem; font-weight: bold;
+            z-index: 10; box-shadow: 0 0 15px rgba(192, 192, 192, 0.1);
+        }
+        .roadmap-card {
+            background: rgba(255, 255, 255, 0.03); border-radius: 4px;
+            padding: 20px; border: 1px solid rgba(255,255,255,0.05);
+        }
+        .roadmap-card h4 { font-weight: 600; font-size: 1.1rem; margin-top: 5px; color: white; }
+
+        /* Components */
+        .bg-navy-depth { background-color: var(--navy-depth); }
+
+        .timer-box {
+            background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(192, 192, 192, 0.2);
+            padding: 15px; min-width: 80px; text-align: center;
+        }
+        .timer-box span { font-size: 1.5rem; font-weight: 200; color: var(--silver); display: block; }
+        .timer-box p { font-size: 0.6rem; text-transform: uppercase; color: white; margin-top: 4px; }
+
+        .date-badge { border: 1px solid var(--silver); padding: 10px 20px; color: white; text-transform: uppercase; font-weight: bold; letter-spacing: 2px; border-radius: 4px;}
+
+        .program-list-card {
+            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(192, 192, 192, 0.1);
+            padding: 30px; border-radius: 4px;
+        }
+        .list-title { color: var(--silver); font-weight: 600; border-bottom: 1px solid rgba(192, 192, 192, 0.1); padding-bottom: 10px; margin-bottom: 20px; text-align: center;}
+        .list-names { font-size: 0.9rem; opacity: 0.6; line-height: 1.8; color: white; }
+
+        .maps-btn {
+            border: 1px solid var(--silver); padding: 12px 30px; text-align: center; display: inline-block;
+            letter-spacing: 3px; font-size: 0.8rem; transition: 0.4s; color: white;
+        }
+        .maps-btn:hover { background: var(--silver); color: var(--navy); }
+    </style>
 </head>
 <body class="bg-[#001f3f] text-white">
 
@@ -205,6 +390,66 @@
     </main>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="bday.js"></script>
+
 </body>
+<script>
+        function openInvitation() {
+        const splash = document.getElementById('splash-screen');
+        const main = document.getElementById('main-content');
+        
+        // Slide-up transition
+        splash.classList.add('hide-splash');
+        main.classList.remove('hidden');
+        
+        // Enable scrolling
+        document.body.style.overflowY = "auto";
+        
+        // Initialize Animate on Scroll
+        setTimeout(() => {
+            AOS.init({ 
+                duration: 1200, 
+                once: true,
+                offset: 50,
+                easing: 'ease-out-back'
+            });
+        }, 200);
+    }
+
+    // Countdown Target: April 19, 2026 at 3:00 PM Afternoon
+    const targetDate = new Date("April 19, 2026 15:00:00").getTime();
+
+    const countdown = setInterval(() => {
+        const now = new Date().getTime();
+        const difference = targetDate - now;
+
+        // If the count down is finished
+        if (difference < 0) {
+            clearInterval(countdown);
+            const timerBlock = document.getElementById("countdown");
+            if (timerBlock) {
+                timerBlock.innerHTML = "<h2 class='silver-text text-2xl font-bold'>The celebration has started!</h2>";
+            }
+            return;
+        }
+
+        // Time calculations
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        // Display the result in the corresponding elements
+        if (document.getElementById("days")) {
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+        }
+    }, 1000);
+
+    // Lock scrolling initially
+    document.addEventListener("DOMContentLoaded", () => {
+        document.body.style.overflowY = "hidden";
+    });
+</script>
 </html>
